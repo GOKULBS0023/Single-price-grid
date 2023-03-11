@@ -1,0 +1,141 @@
+:root{
+    --primary-cyan: hsl(179, 62%, 43%);
+    --primary-cyan-2: hsl(179, 53%, 52%);
+    --primary-yellow: hsl(71, 73%, 54%);
+    --secondary-gray: hsl(199, 20%, 84%);
+    --secondary-blue: hsl(218, 22%, 67%);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Karla', sans-serif;
+    background-color: var(--secondary-gray);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-size: 22px;
+}
+h2{
+    font-size: 18px;
+}
+h3{
+    font-size: 18px;
+}
+p{
+    font-size: 16px;
+}
+.container{
+    width: 40%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "top    top"
+    "middle bottom";
+    overflow: hidden;
+}
+.top{
+    grid-area: top;
+}
+.top .top-head{
+    color: var(--primary-cyan);
+    padding-bottom: 10px;
+}
+.top h3{
+    color: var(--primary-yellow);
+    padding: 10px 0;
+}
+.top .top-para{
+    color: var(--secondary-blue);
+    padding: 0 20px 5px 0;
+}
+.middle{
+    grid-area: middle;
+    background-color: var(--primary-cyan);
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+.middle > *{
+    width: 100%;
+}
+.middle .middle-head{
+    padding-bottom: 10px;
+}
+.middle .price-box{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.middle .price{
+    font-size: 26px;
+    font-weight: 700;
+    margin-right: 15px;
+}
+.middle .per{
+    color: hsl(215, 37%, 88%);
+}
+span{
+    display: inline-block;
+}
+.middle .middle-para{
+    color: var(--secondary-gray);
+    padding-bottom: 15px;
+}
+.middle button{
+    width: 92%;
+    margin-right: 5px;
+    padding: 13px;
+    background-color: var(--primary-yellow);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    align-self: flex-end;
+}
+.bottom{
+    grid-area: bottom;
+    background-color: var(--primary-cyan-2);
+    color: #fff;
+}
+.bottom .bottom-head{
+    padding-bottom: 10px;
+}
+.bottom .bottom-para{
+    color: var(--secondary-gray);
+    font-size: 15px;
+}
+.content{
+    padding: 30px;
+}
+@media (max-width: 820px) {
+    .container{
+        width: 50%;
+        grid-template-areas:
+        "top top"
+        "middle middle"
+        "bottom bottom";
+    }
+}
+@media (max-width: 650px) {
+    .container{
+        width: 65%;
+    }
+}
+@media (max-width: 500px) {
+    .container{
+        width: 80%;
+    }
+}
